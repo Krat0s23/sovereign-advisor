@@ -1,0 +1,1 @@
+Hybrid patterns are useful when some workloads can use managed services but sovereignty-sensitive workloads must stay under tighter customer control or local hosting boundaries.

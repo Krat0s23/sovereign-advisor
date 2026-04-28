@@ -1,0 +1,14 @@
+./Dockerfile.api
+./Dockerfile.ui
+./README.md
+./app/api.py
+./app/frontend.py
+./app/graph/workflow.py
+./app/llm/ollama_client.py
+./app/memory/history.py
+./app/rag/ingest.py
+./app/rag/store.py
+./app/recommend.py
+./docker-compose.yaml
+./file_manifest.txt
+./requirements.txt

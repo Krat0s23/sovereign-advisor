@@ -1,0 +1,1 @@
+Self-managed enterprise deployments are appropriate when customers require stronger operational control, strict sovereignty boundaries, customer-hosted infrastructure, or more direct control over compliance implementation.

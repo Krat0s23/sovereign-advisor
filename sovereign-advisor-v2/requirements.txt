@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+streamlit
+requests
+pydantic
+langchain
+langchain-community
+langchain-text-splitters
+pypdf
+python-frontmatter
+python-docx
+qdrant-client
+fastembed
