@@ -1,35 +1,12 @@
-def route_query(message: str) -> list[str]:
+def classify_intent(message: str) -> str:
     text = message.strip().lower()
 
-    greeting_terms = {
-        "hi",
-        "hello",
-        "hey",
-        "yo",
-        "hii",
-        "hello there",
-        "good morning",
-        "good afternoon",
-        "good evening",
-        "how are you",
-        "how are you?",
-        "how are you doing",
-        "thanks",
-        "thank you",
-        "bye",
-        "goodbye",
-        "what can you do",
-        "help",
-        "who are you",
-    }
-
     advisor_terms = {
-        "compare",
-        "recommend",
-        "recommendation",
-        "choose",
-        "should i",
-        "which one",
+        "vault",
+        "vault enterprise",
+        "hcp vault",
+        "hcp vault dedicated",
+        "hashicorp",
         "sovereignty",
         "residency",
         "compliance",
@@ -38,22 +15,41 @@ def route_query(message: str) -> list[str]:
         "air gap",
         "air-gap",
         "seal wrap",
-        "vault enterprise",
-        "hcp vault dedicated",
-        "hard air-gap",
-        "customer-controlled hsm",
+        "boundary",
         "deployment model",
+        "deployment tradeoffs",
+        "tradeoff",
+        "tradeoffs",
+        "managed",
+        "self-managed",
+        "self managed",
+        "customer-controlled hsm",
+        "control boundary",
         "data sovereignty",
+        "compare",
+        "comparison",
+        "difference",
+        "differences",
+        "vs",
+        "versus",
+        "which one",
+        "recommend",
+        "should i choose",
     }
 
-    if text in greeting_terms:
+    if any(term in text for term in advisor_terms):
+        return "advisor"
+
+    return "chat"
+
+
+def route_query(message: str) -> list[str]:
+    intent = classify_intent(message)
+    if intent != "advisor":
         return []
 
-    if any(term in text for term in advisor_terms):
-        return [
-            "vault_enterprise_docs",
-            "hcp_vault_dedicated_docs",
-            "sovereignty_guidelines",
-        ]
-
-    return []
+    return [
+        "vault_enterprise_docs",
+        "hcp_vault_dedicated_docs",
+        "sovereignty_guidelines",
+    ]
